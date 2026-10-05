@@ -51,7 +51,7 @@ export type GalleryItem =
   | { kind: "placeholder"; caption: string };
 
 /** An empty gallery slot with a note on what image belongs there. */
-const needed = (caption: string): GalleryItem => ({ kind: "placeholder", caption });
+export const needed = (caption: string): GalleryItem => ({ kind: "placeholder", caption });
 
 export type Project = {
   slug: string;
@@ -59,12 +59,14 @@ export type Project = {
   year: string;
   dates: string;
   status: "In progress" | "Completed";
-  role: Text;
+  /** Omit to hide the Role row. */
+  role?: Text;
   tagline: string;
   summary: string;
   metric: { value: string; label: string };
   stack: string[];
-  /** First item is the main image, the rest are thumbnails. Files live under /public/projects. */
+  /** First item is the main image, the rest are thumbnails. Files live under /public/projects.
+   *  Leave empty for a text-only project (no image block anywhere). */
   gallery: GalleryItem[];
   /** "drawing" frames the preview as a drawing sheet, "window" as an app window. */
   frame: "drawing" | "window";
@@ -207,22 +209,16 @@ export const projects: Project[] = [
     year: "2025",
     dates: "Aug 2025 - Jul 2026",
     status: "Completed",
-    role: todo("Your role on this project"),
     tagline: "Mechanical design for a search and rescue robot, plus a self-balancing robot",
     summary:
       "I designed and fabricated mechanical components in SolidWorks for an Urban Search and Rescue robot, including a custom mold for casting polyurethane wheels. Separately, I tuned PID control for a self-balancing robot through repeated testing.",
     metric: { value: "Custom mold", label: "designed for casting polyurethane wheels" },
     stack: ["SolidWorks", "Mold design", "PID control", "Prototyping"],
-    gallery: [
-      needed("Photo of the search and rescue robot, 1600 x 1200"),
-      needed("The wheel mold or a cast polyurethane wheel"),
-      needed("The self-balancing robot"),
-    ],
+    gallery: [],
     frame: "drawing",
     story: {
       problem: [
         "An Urban Search and Rescue robot needs custom mechanical parts, including wheels, built for the job.",
-        todo("What the robot had to do, and the constraint that drove the design"),
       ],
       approach: [
         "Designed and fabricated mechanical components for the robot in SolidWorks.",
@@ -230,7 +226,7 @@ export const projects: Project[] = [
         "Built and tested components through iterative prototyping and performance evaluation.",
         "Developed and tuned PID control algorithms for a self-balancing robot through repeated testing and data analysis.",
       ],
-      results: [todo("Measured result: wheel performance, balance stability, or a run outcome")],
+      results: [],
     },
     links: [],
   },
@@ -246,9 +242,7 @@ export const projects: Project[] = [
       "A CMU 15-112 term project with three teammates: a webcam app that watches posture, screen distance, focus, and phone use during desk work and alerts the user in real time. I wrote the posture and screen-distance detection and the gaze tracker, and connected the OpenCV pipeline to the app's interface.",
     metric: { value: "7.5°", label: "gaze angle that, held for 1 second, triggers a focus alert" },
     stack: ["Python", "OpenCV", "MediaPipe", "NumPy", "cmu_graphics"],
-    gallery: [
-      needed("Demo video or screenshot of the app running"),
-    ],
+    gallery: [],
     frame: "window",
     story: {
       problem: [
@@ -262,7 +256,6 @@ export const projects: Project[] = [
       ],
       results: [
         "The finished app shows live status for posture, distance, and focus, and alerts the user when they slouch, lean in, look away, or pick up a phone.",
-        todo("Accuracy, latency, or user feedback, if you measured it"),
       ],
     },
     links: [],

@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
     { id: "problem", title: "Problem", items: p.story.problem },
     { id: "approach", title: "Approach", items: p.story.approach },
     { id: "results", title: "Results", items: p.story.results },
-  ];
+  ].filter((sec) => sec.items.length > 0);
 
   return (
     <article className="mx-auto max-w-[1320px] px-4 pb-24 pt-10 md:px-8 md:pt-14">
@@ -49,18 +49,24 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[slug
         <p className="mt-5 font-mono text-[1rem] text-ink-muted">{p.tagline}</p>
       </header>
 
-      <div className="mt-12 max-w-[960px]">
-        <ProjectPreview project={p} index={i} priority />
-      </div>
+      {p.gallery.length > 0 && (
+        <div className="mt-12 max-w-[960px]">
+          <ProjectPreview project={p} index={i} priority />
+        </div>
+      )}
 
-      <div className="mt-16 grid gap-14 lg:grid-cols-12 lg:gap-12">
+      <div className={`grid gap-14 lg:grid-cols-12 lg:gap-12 ${p.gallery.length > 0 ? "mt-16" : "mt-12"}`}>
         <aside className="lg:col-span-4">
           <dl className="sheet grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 p-6 font-mono text-meta lg:sticky lg:top-24">
             <span className="reg" aria-hidden />
-            <dt className="text-ink-muted">Role</dt>
-            <dd>
-              <T value={p.role} />
-            </dd>
+            {p.role && (
+              <>
+                <dt className="text-ink-muted">Role</dt>
+                <dd>
+                  <T value={p.role} />
+                </dd>
+              </>
+            )}
             <dt className="text-ink-muted">Dates</dt>
             <dd>{p.dates}</dd>
             <dt className="text-ink-muted">Status</dt>
