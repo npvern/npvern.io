@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useRef, useSyncExternalStore } from "react";
 import { useLenis } from "lenis/react";
 import { MagnifyingGlass, List } from "@phosphor-icons/react";
-import { site } from "@/content/site";
 import { openPalette } from "./command-palette";
 
 const pages = [
@@ -77,14 +76,15 @@ export function Nav() {
               {isMac ? "⌘" : "Ctrl"} K
             </kbd>
           </button>
-          <a
-            href={site.resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ink-link hidden font-mono text-meta text-ink-muted hover:text-ink md:inline"
+          <Link
+            href="/resume"
+            aria-current={isActive("/resume") ? "page" : undefined}
+            className={`ink-link hidden font-mono text-meta hover:text-ink md:inline ${
+              isActive("/resume") ? "text-ink" : "text-ink-muted"
+            }`}
           >
             Résumé
-          </a>
+          </Link>
           <Link
             href="/contact"
             aria-current={onContact ? "page" : undefined}

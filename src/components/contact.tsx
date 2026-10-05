@@ -1,4 +1,5 @@
-import { ArrowUpRight, EnvelopeSimple, FileText, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, EnvelopeSimple, FileText, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { site } from "@/content/site";
 import { CopyEmail } from "./copy-email";
 
@@ -46,19 +47,14 @@ export function Contact() {
             </a>
           </li>
           <li className="border-t border-rule sm:border-l sm:border-t-0">
-            <a
-              href={site.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 p-6 hover:bg-signal-wash md:px-10"
-            >
+            <Link href="/resume" className="group flex items-center gap-3 p-6 hover:bg-signal-wash md:px-10">
               <FileText size={20} className="text-blueprint" aria-hidden />
               <span>
                 <span className="block text-meta text-ink-muted">Résumé</span>
-                <span className="ink-link">PDF, one page</span>
+                <span className="ink-link">View or download</span>
               </span>
-              <ArrowUpRight size={15} className="ml-auto text-ink-muted transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden />
-            </a>
+              <ArrowRight size={15} className="ml-auto text-ink-muted transition-transform group-hover:translate-x-0.5" aria-hidden />
+            </Link>
           </li>
         </ul>
       </div>

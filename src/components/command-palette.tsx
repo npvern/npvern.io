@@ -119,6 +119,7 @@ export function CommandPalette() {
             ["01", "Projects", "/projects"],
             ["02", "Work", "/work"],
             ["03", "About", "/about"],
+            ["", "Résumé", "/resume"],
             ["", "Contact", "/contact"],
           ].map(([n, label, href]) => (
             <Command.Item key={href} value={`page ${label}`} className={item} onSelect={() => run(() => goTo(href))}>
@@ -152,9 +153,9 @@ export function CommandPalette() {
             {copied ? "Email copied" : "Copy email"}
             <span className="ml-auto font-mono text-[0.75rem] text-ink-muted">{site.email}</span>
           </Command.Item>
-          <Command.Item value="resume résumé pdf cv" className={item} onSelect={() => run(() => window.open(site.resume, "_blank"))}>
+          <Command.Item value="resume résumé pdf cv download" className={item} onSelect={() => run(() => window.open(site.resume, "_blank"))}>
             <FileText size={16} className="text-blueprint" aria-hidden />
-            Open résumé
+            Open résumé PDF
             <ArrowSquareOut size={14} className="ml-auto text-ink-muted" aria-hidden />
           </Command.Item>
           <Command.Item value="linkedin profile" className={item} onSelect={() => run(() => window.open(site.linkedin, "_blank"))}>

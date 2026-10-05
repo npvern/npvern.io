@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { work } from "@/content/site";
 
@@ -18,9 +19,9 @@ export function Work() {
           </h1>
           <p className="mt-5 max-w-[36ch] text-ink-muted">
             Engineering roles, newest first. The full list is on my{" "}
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="ink-link text-ink">
+            <Link href="/resume" className="ink-link text-ink">
               résumé
-            </a>
+            </Link>
             .
           </p>
         </div>
