@@ -92,13 +92,10 @@ export function TrackViewer() {
           geo.setIndex(new T.BufferAttribute(idx.slice(), 1));
           geoms.push(geo);
 
-          const hot = g.name === "drive";
           fill[g.name] = new T.MeshBasicMaterial({
             polygonOffset: true,
             polygonOffsetFactor: 1,
             polygonOffsetUnits: 1,
-            transparent: hot,
-            opacity: hot ? 0.9 : 1,
           });
           root.add(new T.Mesh(geo, fill[g.name]));
 
@@ -112,11 +109,9 @@ export function TrackViewer() {
           const surface = new T.Color(cssVar("--surface"));
           const ink = new T.Color(cssVar("--ink"));
           const blue = new T.Color(cssVar("--blueprint"));
-          const signal = new T.Color(cssVar("--signal"));
           for (const name of Object.keys(fill)) {
-            const hot = name === "drive";
-            fill[name].color.copy(hot ? surface.clone().lerp(signal, 0.35) : surface);
-            line[name].color.copy(hot ? signal : name === "tread" ? blue : ink);
+            fill[name].color.copy(surface);
+            line[name].color.copy(name === "tread" ? blue : ink);
           }
           render();
         };

@@ -87,17 +87,13 @@ export function Hero() {
           <div
             className="relative aspect-[5/4] w-full"
             role="img"
-            aria-label="3D model of the CMU Lunabotics tracked mobility assembly, with the drive sprocket side plates highlighted. Drag to rotate."
+            aria-label="3D model of the CMU Lunabotics tracked mobility assembly. Drag to rotate."
           >
             <TrackViewer />
           </div>
-          <figcaption className="grid grid-cols-[1fr_auto] border-t border-rule font-mono text-[0.75rem] text-ink-muted xl:grid-cols-[1fr_auto_auto]">
+          <figcaption className="grid grid-cols-[1fr_auto] border-t border-rule font-mono text-[0.75rem] text-ink-muted">
             <span className="px-3 py-2 text-ink">LUNABOTICS MOBILITY ASM</span>
-            <span className="flex items-center gap-2 border-l border-rule px-3 py-2">
-              <span className="h-[2px] w-4 bg-signal" aria-hidden />
-              Drive sprocket mounts
-            </span>
-            <span className="hidden border-l border-rule px-3 py-2 xl:block">Drag to rotate</span>
+            <span className="hidden border-l border-rule px-3 py-2 [@media(pointer:fine)]:block">Drag to rotate</span>
           </figcaption>
         </figure>
       </motion.div>
