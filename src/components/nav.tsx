@@ -34,12 +34,20 @@ export function Nav() {
         <Link
           href="/"
           aria-current={pathname === "/" ? "page" : undefined}
-          className="font-mono text-[0.9rem] font-medium tracking-tight"
+          className={`relative font-mono text-meta transition-colors ${
+            pathname === "/" ? "text-ink" : "text-ink-muted hover:text-ink"
+          }`}
         >
-          vern<span className="text-signal">.</span>prayoonthong
+          Home
+          <span
+            aria-hidden
+            className={`absolute -bottom-[22px] left-0 h-[2px] bg-signal transition-[width] duration-300 ${
+              pathname === "/" ? "w-full" : "w-0"
+            }`}
+          />
         </Link>
 
-        <ul className="ml-10 hidden items-center gap-8 lg:flex">
+        <ul className="ml-2 hidden items-center gap-8 lg:flex">
           {pages.map((pg) => {
             const on = isActive(pg.href);
             return (
