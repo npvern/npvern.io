@@ -1,25 +1,28 @@
-import { coursework, site, skills, todo } from "@/content/site";
-import { T } from "./bits";
+import { coursework, site, skills } from "@/content/site";
 
 export function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="mx-auto max-w-[1320px] px-4 py-20 md:px-8 md:py-28">
       <div className="grid gap-14 lg:grid-cols-12 lg:gap-12">
         <div className="lg:col-span-6">
-          <h1 id="about-title" className="display text-h2">
+          <p className="flex items-center gap-3 font-mono text-meta text-ink-muted">
+            <span className="h-px w-10 bg-rule" aria-hidden />
             About
+          </p>
+          <h1 id="about-title" className="display mt-5 text-h2">
+            CAD is a hypothesis. The part on the bench is the test.
           </h1>
-          <div className="mt-6 max-w-[60ch] space-y-5 text-lede text-ink-muted">
+          <div className="mt-8 max-w-[60ch] space-y-5 text-lede text-ink-muted">
             <p>
-              I&apos;m {site.legalName.replace(" Prayoonthong", "")}, a mechanical engineering student at Carnegie Mellon
-              with a minor in robotics, graduating in May 2028.
+              I&apos;m Vern, a Mechanical Engineering student at Carnegie Mellon, minoring in Robotics. I like owning a part
+              the whole way through: sketching the idea, modeling it, running the numbers, machining it, and bolting it into
+              the assembly to see what breaks. On CMU Lunabotics, our drive sprocket went through four redesigns, each one
+              easier to machine and assemble than the last.
             </p>
             <p>
-              On CMU Lunabotics I lead the mobility subteam, where I design drivetrain parts and then machine them myself.
-              Before that I interned at NSTDA in Bangkok, building a computer vision system that detects and counts objects.
-            </p>
-            <p className="text-body">
-              <T value={todo("One or two sentences in your own words: what kind of problems you want to work on")} />
+              Most of what I&apos;ve learned came from iterations like that. A tolerance that looks fine on screen can stop an
+              assembly cold, and the fix is usually simpler than the first idea. I&apos;m drawn to mechanical design,
+              mechanisms, robotics, and manufacturing, and to parts that are as easy to build as they are to draw.
             </p>
           </div>
 
