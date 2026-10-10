@@ -214,7 +214,35 @@ export const projects: Project[] = [
       "I designed and fabricated mechanical components in SolidWorks for an Urban Search and Rescue robot, including a custom mold for casting polyurethane wheels. Separately, I tuned PID control for a self-balancing robot through repeated testing.",
     metric: { value: "Custom mold", label: "designed for casting polyurethane wheels" },
     stack: ["SolidWorks", "Mold design", "PID control", "Prototyping"],
-    gallery: [],
+    gallery: [
+      {
+        kind: "image",
+        src: "/projects/usar-robot/wheel-mold-assembled.png",
+        alt: "SolidWorks model of the round wheel mold with mounting tabs, with the wheel insert seated inside",
+        caption: "SolidWorks model of the wheel casting mold, assembled.",
+        width: 917,
+        height: 648,
+        fit: "contain",
+      },
+      {
+        kind: "image",
+        src: "/projects/usar-robot/wheel-model.png",
+        alt: "SolidWorks model of a wheel with raised tread blocks around its rim and a keyed center hub",
+        caption: "SolidWorks model of the wheel, with tread blocks and a keyed hub.",
+        width: 580,
+        height: 637,
+        fit: "contain",
+      },
+      {
+        kind: "image",
+        src: "/projects/usar-robot/wheel-mold-body.png",
+        alt: "SolidWorks model of the empty mold body with slotted walls and two bolt tabs",
+        caption: "The mold body on its own, showing the tread slots in the wall.",
+        width: 622,
+        height: 458,
+        fit: "contain",
+      },
+    ],
     frame: "drawing",
     story: {
       problem: [
