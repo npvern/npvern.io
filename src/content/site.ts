@@ -217,6 +217,24 @@ export const projects: Project[] = [
     gallery: [
       {
         kind: "image",
+        src: "/projects/usar-robot/printed-mold-assembled.jpg",
+        alt: "The white 3D-printed wheel mold, two halves bolted together at the tabs, with the toothed insert seated in the center",
+        caption: "The 3D-printed mold, assembled: two halves bolted together with the insert in place.",
+        width: 1345,
+        height: 1600,
+        fit: "contain",
+      },
+      {
+        kind: "image",
+        src: "/projects/usar-robot/printed-mold-parts.jpg",
+        alt: "The printed mold body with its slotted wall and bolted tabs, next to the separate toothed insert",
+        caption: "The printed mold body and the insert, taken apart.",
+        width: 1175,
+        height: 1600,
+        fit: "contain",
+      },
+      {
+        kind: "image",
         src: "/projects/usar-robot/wheel-mold-assembled.png",
         alt: "SolidWorks model of the round wheel mold with mounting tabs, with the wheel insert seated inside",
         caption: "SolidWorks model of the wheel casting mold, assembled.",
