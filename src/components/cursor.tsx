@@ -36,20 +36,30 @@ export function Cursor() {
   useEffect(() => {
     if (!enabled) return;
     const move = (e: PointerEvent) => {
+      const t = e.target as Element | null;
+      if (t?.tagName === "IFRAME") return setVisible(false);
       x.set(e.clientX);
       y.set(e.clientY);
       setVisible(true);
-      const t = e.target as Element | null;
       if (t?.closest("[data-cursor='crosshair']")) setMode("crosshair");
       else if (t?.closest("a, button, [role='option'], input, label")) setMode("link");
       else if (t?.closest("[data-cursor='drag']")) setMode("drag");
       else setMode("default");
     };
     const leave = () => setVisible(false);
+    // An iframe (the résumé PDF) swallows pointer events, so the dot would freeze at its edge.
+    // Hide it there; the frame shows the native cursor, and the next move outside brings it back.
+    const over = (e: PointerEvent) => {
+      if ((e.target as Element | null)?.tagName === "IFRAME") setVisible(false);
+    };
     window.addEventListener("pointermove", move, { passive: true });
+    window.addEventListener("pointerover", over, { passive: true });
+    window.addEventListener("blur", leave);
     document.documentElement.addEventListener("pointerleave", leave);
     return () => {
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerover", over);
+      window.removeEventListener("blur", leave);
       document.documentElement.removeEventListener("pointerleave", leave);
     };
   }, [enabled, x, y]);
