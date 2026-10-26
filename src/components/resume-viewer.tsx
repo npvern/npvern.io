@@ -18,13 +18,26 @@ export function ResumeViewer() {
 
   if (inlinePdf) {
     return (
-      <iframe
-        // Shaped like a letter page plus the viewer's toolbar, so the whole page shows at full
-        // width with nothing to scroll inside the frame; the wheel then scrolls the page itself.
-        src={`${site.resume}#toolbar=1&view=FitH`}
-        title={`${site.legalName} résumé`}
-        className="block aspect-[8.5/11.35] w-full bg-surface"
-      />
+      <div className="relative">
+        <iframe
+          // Shaped like a letter page plus the viewer's toolbar, so the whole page shows at full
+          // width with nothing to scroll inside the frame; the wheel then scrolls the page itself.
+          src={`${site.resume}#toolbar=1&view=FitH`}
+          title={`${site.legalName} résumé`}
+          className="block aspect-[8.5/11.35] w-full bg-surface"
+        />
+        {/* A frame swallows pointer events, which would leave the custom cursor stuck at its
+            edge. This transparent layer covers the page (not the viewer's toolbar, so download
+            and print still work), keeps the cursor alive, and opens the PDF full size on click. */}
+        <a
+          href={site.resume}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open the résumé PDF in a new tab"
+          data-cursor="default"
+          className="absolute inset-x-0 bottom-0 top-14"
+        />
+      </div>
     );
   }
 
