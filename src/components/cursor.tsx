@@ -41,8 +41,7 @@ export function Cursor() {
       x.set(e.clientX);
       y.set(e.clientY);
       setVisible(true);
-      if (t?.closest("[data-cursor='default']")) setMode("default");
-      else if (t?.closest("[data-cursor='crosshair']")) setMode("crosshair");
+      if (t?.closest("[data-cursor='crosshair']")) setMode("crosshair");
       else if (t?.closest("a, button, [role='option'], input, label")) setMode("link");
       else if (t?.closest("[data-cursor='drag']")) setMode("drag");
       else setMode("default");
