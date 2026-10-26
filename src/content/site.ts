@@ -198,7 +198,7 @@ export const projects: Project[] = [
       results: [
         "FEA gave a factor of safety of 2.52 on the seat frame; hand calculations gave 1.66. The FEA left out the suspension rope and treats wood as equally strong in every direction, so we expect the real margin to be lower than 2.52.",
         "Material cost came to $134.25, under the $180 budget.",
-        "Built and tested the prototype to verify stability, fit, and load-bearing performance.",
+        "Built and tested the final prototype, validating its stability and structural performance under loads up to 200 lb.",
       ],
     },
     links: [],
@@ -206,14 +206,14 @@ export const projects: Project[] = [
   {
     slug: "general-robotics",
     name: "Urban search and rescue robot",
-    year: "2025",
-    dates: "Aug 2025 - Jul 2026",
+    year: "2026",
+    dates: "Jan 2026 - May 2026",
     status: "Completed",
     tagline: "Mechanical design for a search and rescue robot, plus a self-balancing robot",
     summary:
       "I designed and fabricated mechanical components in SolidWorks for an Urban Search and Rescue robot, including a custom mold for casting polyurethane wheels. Separately, I tuned PID control for a self-balancing robot through repeated testing.",
     metric: { value: "Custom mold", label: "designed for casting polyurethane wheels" },
-    stack: ["SolidWorks", "Mold design", "PID control", "Prototyping"],
+    stack: ["SolidWorks", "Mold design", "3D printing", "PID control", "Prototyping"],
     gallery: [
       {
         kind: "image",
@@ -269,7 +269,7 @@ export const projects: Project[] = [
       approach: [
         "Designed and fabricated mechanical components for the robot in SolidWorks.",
         "Designed a custom mold for casting polyurethane wheels, accounting for geometry, fit, and manufacturability.",
-        "Built and tested components through iterative prototyping and performance evaluation.",
+        "Built, tested, and iterated the robot design through rapid prototyping and performance evaluation.",
         "Developed and tuned PID control algorithms for a self-balancing robot through repeated testing and data analysis.",
       ],
       results: [],
@@ -326,7 +326,7 @@ export const work: Job[] = [
     dates: "Aug 2025 - Present",
     current: true,
     points: [
-      "Led a 6-member mobility subteam developing a tracked drive system for an 80 kg lunar rover.",
+      "Lead a 6-member mobility subteam designing and manufacturing the tracked drive system for an 80 kg lunar rover.",
       "Designed and integrated a 6-tooth, 5.4 in drive sprocket and 9 mechanical interfaces through 4 redesigns.",
       "Manufactured 60+ aluminum tread plates by precision cutting and CNC drilling, holding ±0.01 in.",
     ],
@@ -357,7 +357,7 @@ export const skills: { area: string; items: string[] }[] = [
   },
   {
     area: "Programming and data",
-    items: ["Python", "C", "MATLAB", "Computer vision"],
+    items: ["Python", "C", "MATLAB", "NumPy", "OpenCV", "YOLOv11-OBB", "Data structures and algorithms"],
   },
   {
     area: "Languages",
