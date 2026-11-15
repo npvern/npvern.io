@@ -90,7 +90,7 @@ export const projects: Project[] = [
     summary:
       "I lead the 6-person mobility subteam on CMU Lunabotics. We are building the tracked drive for an 80 kg rover. I designed the drive sprocket and its mechanical interfaces, then machined and assembled the track hardware.",
     metric: { value: "±0.01 in", label: "tolerance held on 60+ CNC-drilled tread plates" },
-    stack: ["SolidWorks", "Onshape", "CNC drilling", "Manual milling", "3D printing", "DFM"],
+    stack: ["SolidWorks", "Onshape", "DFM", "GD&T", "Manual machining", "3D printing", "CNC drilling"],
     gallery: [
       {
         kind: "image",
@@ -136,10 +136,10 @@ export const projects: Project[] = [
       ],
       approach: [
         "Led a 6-member mobility subteam through design and fabrication of the tracked drive.",
-        "Coordinated the move of 20+ CAD components from Onshape to SolidWorks across the team.",
-        "Designed and integrated a 6-tooth, 5.4 in diameter drive sprocket and 9 mechanical interfaces over 4 redesigns. Each revision added more DFM considerations to improve manufacturability, assembly, and fit.",
+        "Coordinated the subteam's migration of 20+ drive-system CAD components from Onshape to SolidWorks.",
+        "Designed and integrated a 6-tooth, 5.4 in diameter drive sprocket and 9 mechanical interfaces over 4 design iterations. Each revision improved DFM and modularity for easier maintenance, along with assembly and fit.",
         "Manufactured 60+ aluminum tread plates by precision cutting and CNC drilling.",
-        "Fabricated and integrated 10+ track components with 3D printing and manual milling for the final assembly.",
+        "Fabricated and assembled 10+ track components with 3D printing and manual milling for the final rover.",
       ],
       results: [
         "Held ±0.01 in tolerance across 60+ machined tread plates.",
@@ -150,6 +150,59 @@ export const projects: Project[] = [
     links: [{ label: "Lunabotics team portfolio (Google Doc)", href: lunaboticsDoc }],
   },
   {
+    slug: "aquaguard",
+    name: "AquaGuard (Build18)",
+    year: "2026",
+    dates: "Oct 2026 - Present",
+    status: "In progress",
+    role: "Team of 4",
+    tagline: "A pool-monitoring and foam-flotation robot prototype",
+    summary:
+      "With three teammates I am building AquaGuard, a pool-monitoring and foam-flotation robot prototype, for Build18. I designed its closed-cell foam raft and the magnetic connectors and clamps that hold the raft to four 12 V electromagnets.",
+    metric: { value: "~2.9 kgf", label: "net buoyancy of the 302 x 272 x 51 mm foam raft, estimated in CAD" },
+    stack: ["Mechanical design", "Buoyancy analysis", "Magnetic mounting", "CAD"],
+    gallery: [],
+    frame: "drawing",
+    story: {
+      problem: [
+        "A 4-person Build18 team is developing a pool-monitoring and foam-flotation robot prototype.",
+      ],
+      approach: [
+        "Designed a 302 x 272 x 51 mm closed-cell foam raft and estimated about 2.9 kgf of net buoyancy in CAD.",
+        "Designed magnetic connectors and clamps that hold the raft to four 12 V electromagnets.",
+      ],
+      results: [],
+    },
+    links: [],
+  },
+  {
+    slug: "knee-airbag",
+    name: "Knee airbag system",
+    year: "2026",
+    dates: "Sep 2026 - Present",
+    status: "In progress",
+    role: "Team of 6",
+    tagline: "A hip-mounted, compressed-gas knee airbag for fall protection",
+    summary:
+      "With five teammates I am developing a hip-mounted knee airbag, inflated by compressed gas, for fall protection. I selected the airbag material, ran FEA on the bag, and co-developed the bill of materials.",
+    metric: { value: "1.8", label: "simulated factor of safety on the airbag (FEA)" },
+    stack: ["FEA", "Material selection", "Bill of materials"],
+    gallery: [],
+    frame: "drawing",
+    story: {
+      problem: [
+        "A 6-person team is developing a hip-mounted, compressed-gas knee airbag system for fall protection.",
+      ],
+      approach: [
+        "Selected TPU-coated nylon as the airbag material.",
+        "Ran FEA on the bag, reaching a simulated factor of safety of 1.8.",
+        "Co-developed the system's bill of materials with 2 teammates.",
+      ],
+      results: [],
+    },
+    links: [],
+  },
+  {
     slug: "hammock-chair",
     name: "Foldable hammock chair",
     year: "2026",
@@ -158,7 +211,7 @@ export const projects: Project[] = [
     role: "Team of 4",
     tagline: "A fold-flat hanging chair for day hikers at Shenandoah National Park",
     summary:
-      "With three teammates I designed a hanging chair for casual day hikers. Its rigid frame folds flat into one bundle, locks open with quick-release pins, and hangs from a branch on climbing rope. We checked it with hand calculations and FEA, then built and tested a prototype.",
+      "With three teammates I designed a hanging chair for casual day hikers. Its rigid frame folds flat into one bundle, locks open with quick-release pins, sets up in about 2 minutes, and hangs from a branch on climbing rope. We checked it with hand calculations and FEA in ANSYS Discovery, then built a prototype and tested it under loads up to 200 lb.",
     metric: { value: "2.52", label: "FEA factor of safety on the seat frame (hand calcs: 1.66)" },
     stack: ["SolidWorks", "Ansys Discovery FEA", "Hand calculations", "Fabrication", "Prototype testing"],
     gallery: [
@@ -199,6 +252,7 @@ export const projects: Project[] = [
         "FEA gave a factor of safety of 2.52 on the seat frame; hand calculations gave 1.66. The FEA left out the suspension rope and treats wood as equally strong in every direction, so we expect the real margin to be lower than 2.52.",
         "Material cost came to $134.25, under the $180 budget.",
         "Built and tested the final prototype, validating its stability and structural performance under loads up to 200 lb.",
+        "Setup takes about 2 minutes.",
       ],
     },
     links: [],
@@ -209,11 +263,11 @@ export const projects: Project[] = [
     year: "2026",
     dates: "Jan 2026 - May 2026",
     status: "Completed",
-    tagline: "Mechanical design for a search and rescue robot, plus a self-balancing robot",
+    tagline: "A stair-climbing search and rescue robot with cast polyurethane wheels",
     summary:
-      "I designed and fabricated mechanical components in SolidWorks for an Urban Search and Rescue robot, including a custom mold for casting polyurethane wheels. Separately, I tuned PID control for a self-balancing robot through repeated testing.",
-    metric: { value: "Custom mold", label: "designed for casting polyurethane wheels" },
-    stack: ["SolidWorks", "Mold design", "3D printing", "PID control", "Prototyping"],
+      "I designed a search and rescue robot from LEGO and 3D-printed parts, placing its center of mass so it can climb 30° ramps and stairs. I designed a custom mold and cast 2 polyurethane wheels to improve its traction. Separately, I tuned PID control for a self-balancing robot through repeated testing.",
+    metric: { value: "30°", label: "ramps and stairs climbed, by placing the center of mass" },
+    stack: ["SolidWorks", "Mold design", "Casting", "3D printing", "PID control", "Prototyping"],
     gallery: [
       {
         kind: "image",
@@ -267,12 +321,16 @@ export const projects: Project[] = [
         "An Urban Search and Rescue robot needs custom mechanical parts, including wheels, built for the job.",
       ],
       approach: [
-        "Designed and fabricated mechanical components for the robot in SolidWorks.",
-        "Designed a custom mold for casting polyurethane wheels, accounting for geometry, fit, and manufacturability.",
+        "Designed the robot from LEGO and 3D-printed parts, with mechanical components modeled in SolidWorks.",
+        "Placed the center of mass so the robot can climb 30° ramps and stairs.",
+        "Designed a custom mold for casting polyurethane wheels, accounting for geometry, fit, and manufacturability, and cast 2 wheels.",
         "Built, tested, and iterated the robot design through rapid prototyping and performance evaluation.",
         "Developed and tuned PID control algorithms for a self-balancing robot through repeated testing and data analysis.",
       ],
-      results: [],
+      results: [
+        "The robot climbs 30° ramps and stairs.",
+        "The 2 cast polyurethane wheels improved the robot's traction.",
+      ],
     },
     links: [],
   },
@@ -327,7 +385,8 @@ export const work: Job[] = [
     current: true,
     points: [
       "Lead a 6-member mobility subteam designing and manufacturing the tracked drive system for an 80 kg lunar rover.",
-      "Designed and integrated a 6-tooth, 5.4 in drive sprocket and 9 mechanical interfaces through 4 redesigns.",
+      "Coordinated the subteam's migration of 20+ drive-system CAD components from Onshape to SolidWorks.",
+      "Designed and integrated a 6-tooth, 5.4 in drive sprocket and 9 mechanical interfaces over 4 design iterations, improving DFM and modularity for easier maintenance.",
       "Manufactured 60+ aluminum tread plates by precision cutting and CNC drilling, holding ±0.01 in.",
     ],
     link: { label: "Read my team portfolio", href: lunaboticsDoc },
@@ -339,8 +398,8 @@ export const work: Job[] = [
     dates: "Jun 2025 - Jul 2025",
     current: false,
     points: [
-      "Developed and tested an automated object-counting system using image thresholding and contour detection.",
-      "Curated and annotated a custom dataset, then trained and evaluated a YOLOv11-OBB model to detect and count objects at varied orientations.",
+      "Developed an automated system that counts concrete-mix bags by stitching drone video into panoramas with OpenCV, using image thresholding and contour detection.",
+      "Built a 358-image annotated dataset and trained a YOLOv11-OBB model to detect bags at varied orientations, reaching 0.99 mAP50 on validation.",
       "Analyzed performance across lighting and orientation conditions to find failure cases and improve robustness.",
     ],
   },
@@ -349,15 +408,19 @@ export const work: Job[] = [
 export const skills: { area: string; items: string[] }[] = [
   {
     area: "CAD and mechanical design",
-    items: ["SolidWorks", "Onshape", "ANSYS FEA", "CFD", "3D printing", "CAD drawings"],
+    items: ["SolidWorks", "Onshape", "ANSYS Discovery", "FEA", "CFD", "GD&T", "DFM", "Engineering drawings", "3D printing"],
   },
   {
     area: "Manufacturing and prototyping",
-    items: ["CNC", "Manual milling", "Mechanical assembly", "Prototyping", "Design verification", "DFM", "GD&T"],
+    items: ["Manual milling", "3D printing", "Mechanical assembly", "Prototyping", "Design verification", "CNC"],
   },
   {
-    area: "Programming and data",
-    items: ["Python", "C", "MATLAB", "NumPy", "OpenCV", "YOLOv11-OBB", "Data structures and algorithms"],
+    area: "Analysis and documentation",
+    items: ["Hand calculations", "Material selection", "Buoyancy analysis", "Bill of materials (BOM)"],
+  },
+  {
+    area: "Programming",
+    items: ["Python", "MATLAB", "C", "NumPy", "OpenCV", "MediaPipe", "YOLO", "Image stitching", "Data structures and algorithms"],
   },
   {
     area: "Languages",
