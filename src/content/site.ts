@@ -89,8 +89,8 @@ export const projects: Project[] = [
     tagline: "A tracked drive system for an 80 kg lunar rover",
     summary:
       "I lead the 6-person mobility subteam on CMU Lunabotics. We are building the tracked drive for an 80 kg rover. I designed the drive sprocket and its mechanical interfaces, then machined and assembled the track hardware.",
-    metric: { value: "±0.01 in", label: "tolerance held on 60+ CNC-drilled tread plates" },
-    stack: ["SolidWorks", "Onshape", "DFM", "GD&T", "Manual machining", "3D printing", "CNC drilling"],
+    metric: { value: "4", label: "design iterations on the drive sprocket and its 9 mechanical interfaces" },
+    stack: ["SolidWorks", "Onshape", "DFM", "GD&T", "Manual machining", "3D printing"],
     gallery: [
       {
         kind: "image",
@@ -138,11 +138,11 @@ export const projects: Project[] = [
         "Led a 6-member mobility subteam through design and fabrication of the tracked drive.",
         "Coordinated the subteam's migration of 20+ drive-system CAD components from Onshape to SolidWorks.",
         "Designed and integrated a 6-tooth, 5.4 in diameter drive sprocket and 9 mechanical interfaces over 4 design iterations. Each revision improved DFM and modularity for easier maintenance, along with assembly and fit.",
-        "Manufactured 60+ aluminum tread plates by precision cutting and CNC drilling.",
+        "Manufactured 60+ aluminum tread plates by precision cutting.",
         "Fabricated and assembled 10+ track components with 3D printing and manual milling for the final rover.",
       ],
       results: [
-        "Held ±0.01 in tolerance across 60+ machined tread plates.",
+        "Refined the drive sprocket and its 9 mechanical interfaces over 4 design iterations, improving DFM and modularity for easier maintenance.",
         "Integrated 10+ fabricated track components into the final rover assembly.",
         "Testing found regolith getting into the sealed bearings and stopping them from turning freely. A felt seal was designed and test-fitted; it still needs longer testing.",
       ],
@@ -387,7 +387,7 @@ export const work: Job[] = [
       "Lead a 6-member mobility subteam designing and manufacturing the tracked drive system for an 80 kg lunar rover.",
       "Coordinated the subteam's migration of 20+ drive-system CAD components from Onshape to SolidWorks.",
       "Designed and integrated a 6-tooth, 5.4 in drive sprocket and 9 mechanical interfaces over 4 design iterations, improving DFM and modularity for easier maintenance.",
-      "Manufactured 60+ aluminum tread plates by precision cutting and CNC drilling, holding ±0.01 in.",
+      "Manufactured 60+ aluminum tread plates by precision cutting.",
     ],
     link: { label: "Read my team portfolio", href: lunaboticsDoc },
   },
@@ -412,7 +412,7 @@ export const skills: { area: string; items: string[] }[] = [
   },
   {
     area: "Manufacturing and prototyping",
-    items: ["Manual milling", "3D printing", "Mechanical assembly", "Prototyping", "Design verification", "CNC"],
+    items: ["Manual milling", "3D printing", "Mechanical assembly", "Prototyping", "Design verification"],
   },
   {
     area: "Analysis and documentation",
