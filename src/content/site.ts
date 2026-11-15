@@ -132,7 +132,7 @@ export const projects: Project[] = [
     story: {
       problem: [
         "CMU Lunabotics needs a drive system that can move an 80 kg rover. The mobility subteam chose a tracked design.",
-        "Mobility is a primary driver of rover performance. Derailment, excessive friction, or a weak structure in the tracks would keep the rover from succeeding at competition.",
+        "If a track derails, binds, or breaks, the rover can't finish its run at competition.",
       ],
       approach: [
         "Led a 6-member mobility subteam through design and fabrication of the tracked drive.",
@@ -144,7 +144,7 @@ export const projects: Project[] = [
       results: [
         "Refined the drive sprocket and its 9 mechanical interfaces over 4 design iterations, improving DFM and modularity for easier maintenance.",
         "Integrated 10+ fabricated track components into the final rover assembly.",
-        "Testing found regolith getting into the sealed bearings and stopping them from turning freely. A felt seal was designed and test-fitted; it still needs longer testing.",
+        "In testing, regolith got into the sealed bearings and stopped them from turning freely. The team designed and test-fitted a felt seal, which still needs longer testing.",
       ],
     },
     links: [{ label: "Lunabotics team portfolio (Google Doc)", href: lunaboticsDoc }],
@@ -318,14 +318,14 @@ export const projects: Project[] = [
     frame: "drawing",
     story: {
       problem: [
-        "An Urban Search and Rescue robot needs custom mechanical parts, including wheels, built for the job.",
+        "The search and rescue robot had to climb 30° ramps and stairs, which takes traction and a well-placed center of mass.",
       ],
       approach: [
         "Designed the robot from LEGO and 3D-printed parts, with mechanical components modeled in SolidWorks.",
         "Placed the center of mass so the robot can climb 30° ramps and stairs.",
-        "Designed a custom mold for casting polyurethane wheels, accounting for geometry, fit, and manufacturability, and cast 2 wheels.",
-        "Built, tested, and iterated the robot design through rapid prototyping and performance evaluation.",
-        "Developed and tuned PID control algorithms for a self-balancing robot through repeated testing and data analysis.",
+        "Designed a mold for casting polyurethane wheels and cast 2 wheels with it.",
+        "Built the robot, tested it, and revised the design between test runs.",
+        "On a separate self-balancing robot, tuned the PID controller over repeated test runs, using the logged data to adjust the gains.",
       ],
       results: [
         "The robot climbs 30° ramps and stairs.",
@@ -400,7 +400,7 @@ export const work: Job[] = [
     points: [
       "Developed an automated system that counts concrete-mix bags by stitching drone video into panoramas with OpenCV, using image thresholding and contour detection.",
       "Built a 358-image annotated dataset and trained a YOLOv11-OBB model to detect bags at varied orientations, reaching 0.99 mAP50 on validation.",
-      "Analyzed performance across lighting and orientation conditions to find failure cases and improve robustness.",
+      "Tested it under different lighting and bag orientations to find where it failed, then made it more reliable.",
     ],
   },
 ];

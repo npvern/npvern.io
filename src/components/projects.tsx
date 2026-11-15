@@ -14,10 +14,10 @@ export function Projects() {
           Projects
         </p>
         <h1 id="projects-title" className="display mt-5 text-h2">
-          Parts I designed, built, and tested.
+          Things I&apos;ve designed and built.
         </h1>
         <p className="mt-5 max-w-[60ch] text-lede text-ink-muted">
-          From CAD and the machine shop to computer vision. Open any project for the full story.
+          Mostly mechanical design and fabrication, plus one computer vision app.
         </p>
       </header>
 

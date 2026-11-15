@@ -10,7 +10,7 @@ export function About() {
             About
           </p>
           <h1 id="about-title" className="display mt-5 text-h2">
-            CAD is a hypothesis. The part on the bench is the test.
+            I design parts, then build them to find out if they work.
           </h1>
           <div className="mt-8 max-w-[60ch] space-y-5 text-lede text-ink-muted">
             <p>
@@ -20,9 +20,9 @@ export function About() {
               easier to machine and assemble than the last.
             </p>
             <p>
-              Most of what I&apos;ve learned came from iterations like that. A tolerance that looks fine on screen can stop an
-              assembly cold, and the fix is usually simpler than the first idea. I&apos;m drawn to mechanical design,
-              mechanisms, robotics, and manufacturing, and to parts that are as easy to build as they are to draw.
+              Most of what I know came from iterations like that. A part that fits in CAD doesn&apos;t always fit on the
+              bench, and the fix is usually simpler than my first idea. I&apos;m most interested in mechanical design,
+              robotics, and manufacturing, especially parts that are easy to build.
             </p>
           </div>
 
